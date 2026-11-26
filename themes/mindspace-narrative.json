@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "title": "Monsters Among Us",
+  "premise": "An alien escaped during an experiment breakout on the station.",
+  "beginning": "Fireteam Zulu breaches the airlock.",
+  "finale": "All three gates are online. The Void Gate opens onto the Final Boss.",
+  "entrance": {
+    "label": "Airlock",
+    "area": "Hangar / Cargo",
+    "author": "Zulu"
+  },
+  "final": {
+    "label": "Void Gate",
+    "area": "Underbelly",
+    "author": "Sam"
+  },
+  "finalEnemy": "Final Boss",
+  "events": [
+    {
+      "id": "1",
+      "name": "Recon Squad finds logs",
+      "text": "Recon pulled the breakout logs before the station lost power."
+    },
+    {
+      "id": "2",
+      "name": "Supernatural / Sam",
+      "text": "Sam heard the airlock cycle before anybody touched the controls."
+    },
+    {
+      "id": "3",
+      "name": "Big monster on the loose",
+      "text": "Something from the lab is loose. It dented the airlock from our side."
+    }
+  ],
+  "endings": [
+    {
+      "id": "1",
+      "name": "Reset to station",
+      "text": "The airlock cycles again. Zulu calls the same breach."
+    },
+    {
+      "id": "2",
+      "name": "See",
+      "text": "Sam sees the experiment breakout play out on both sides of the gate."
+    },
+    {
+      "id": "3",
+      "name": "Release monsters",
+      "text": "The gate stays open, and the monsters spill back into the station."
+    },
+    {
+      "id": "4",
+      "name": "Stop / help alien self",
+      "text": "Sam reaches the alien self and stops the breach from repeating."
+    }
+  ],
+  "areas": [
+    "CIC",
+    "Engineering",
+    "Lab",
+    "Green",
+    "Hangar / Cargo",
+    "Recycling / Life Support",
+    "Commons",
+    "Food",
+    "Med Bay / Bio Lab",
+    "Underbelly"
+  ],
+  "roomTypes": [
+    {
+      "name": "hallway",
+      "roles": [
+        "entrance",
+        "wing"
+      ],
+      "maxSpan": 5
+    },
+    {
+      "name": "room",
+      "roles": [
+        "entrance",
+        "wing"
+      ],
+      "maxSpan": 256
+    },
+    {
+      "name": "objective",
+      "roles": [
+        "wing"
+      ],
+      "maxSpan": 256
+    },
+    {
+      "name": "story",
+      "roles": [
+        "wing"
+      ],
+      "maxSpan": 256
+    },
+    {
+      "name": "obstacle",
+      "roles": [
+        "wing"
+      ],
+      "maxSpan": 256
+    },
+    {
+      "name": "portal",
+      "roles": [
+        "gate",
+        "final"
+      ],
+      "maxSpan": 256
+    }
+  ],
+  "peacefulObjectives": [
+    "hack computer",
+    "destroy generators"
+  ],
+  "combatObjectives": [
+    "kill enemies"
+  ],
+  "pickupTypes": [
+    "audio log",
+    "bio",
+    "data pad"
+  ],
+  "encounters": [
+    {
+      "chance": 0,
+      "tier": 1,
+      "enemies": [
+        "Grunt 1"
+      ],
+      "tactics": [
+        "cover"
+      ]
+    },
+    {
+      "chance": 50,
+      "tier": 2,
+      "enemies": [
+        "Grunt 2"
+      ],
+      "tactics": [
+        "roll",
+        "cover"
+      ]
+    },
+    {
+      "chance": 100,
+      "tier": 3,
+      "enemies": [
+        "Grunt 3"
+      ],
+      "tactics": [
+        "roll",
+        "grenades",
+        "shields",
+        "cover"
+      ]
+    }
+  ],
+  "wings": [
+    {
+      "name": "Engineering",
+      "character": "Rachel",
+      "stack": "Engineer Stack",
+      "synopsis": "Rachel follows the power failure through the station systems and checks the robot logs against her scanner.",
+      "gate": {
+        "node": "GATE1",
+        "text": "I can read this gate with the vision scanner. The station AI insists it has never been powered."
+      },
+      "rooms": [
+        {
+          "node": "W1R1",
+          "text": "I cut power to the scanner here. It kept drawing the same shape behind my shoulder."
+        },
+        {
+          "node": "W1R2",
+          "text": "A robot brought me its own fault report in my handwriting."
+        },
+        {
+          "node": "W1R3",
+          "text": "I pulled the system logs before the lights came back. Every restart begins with the lab alarm."
+        }
+      ]
+    },
+    {
+      "name": "Soldier",
+      "character": "David",
+      "stack": "Alien Stack",
+      "synopsis": "David tracks the escaped alien through the station and finds evidence it came back after the first sweep.",
+      "gate": {
+        "node": "GATE2",
+        "text": "Zulu swept this gate twice. The tracks on our second pass ran over our own."
+      },
+      "rooms": [
+        {
+          "node": "W2R1",
+          "text": "The lab alarm sounded here after we cleared the room. This time it came through the floor."
+        },
+        {
+          "node": "W2R2",
+          "text": "It came up behind us while we checked the breach seal."
+        },
+        {
+          "node": "W2R3",
+          "text": "Zulu lost this section twice. On the second pass it already knew where we would take cover."
+        }
+      ]
+    },
+    {
+      "name": "Supernatural",
+      "character": "Sam",
+      "stack": "Super Stack",
+      "synopsis": "Sam follows the repeating breach back to the Void Gate.",
+      "gate": {
+        "node": "GATE3",
+        "text": "I heard myself call the gate clear. I still had my helmet off."
+      },
+      "rooms": [
+        {
+          "node": "W3R1",
+          "text": "I remember dying in this room. The flashlight battery is still warm in my hand."
+        },
+        {
+          "node": "W3R2",
+          "text": "My reflection kept moving when the station clock went back a second."
+        },
+        {
+          "node": "W3R3",
+          "text": "I heard the breach call again, with my own voice answering from beyond the gate."
+        }
+      ]
+    }
+  ]
+}

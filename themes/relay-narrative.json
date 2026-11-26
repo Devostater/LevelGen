@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "title": "The Hill Relay",
+  "premise": "A storm cut radio contact with the valley.",
+  "beginning": "Mara climbs the service tower.",
+  "finale": "The access relay opens the transmitter deck.",
+  "entrance": {
+    "label": "Service Entrance",
+    "area": "Ground Floor",
+    "author": "Mara"
+  },
+  "final": {
+    "label": "Transmitter Deck",
+    "area": "Roof",
+    "author": "Mara"
+  },
+  "finalEnemy": "Damaged security drone",
+  "events": [
+    {
+      "id": "storm",
+      "name": "Storm surge",
+      "text": "A burst of static answers the call for help."
+    }
+  ],
+  "endings": [
+    {
+      "id": "relay",
+      "name": "Signal restored",
+      "text": "The valley dispatcher reads the evacuation route back to Mara."
+    }
+  ],
+  "areas": [
+    "Maintenance",
+    "Switch Room",
+    "Service Lift"
+  ],
+  "roomTypes": [
+    {
+      "name": "room",
+      "roles": [
+        "entrance",
+        "wing",
+        "gate",
+        "final"
+      ],
+      "maxSpan": 256
+    }
+  ],
+  "peacefulObjectives": [
+    "Inspect the relay"
+  ],
+  "combatObjectives": [
+    "Disable the drone"
+  ],
+  "pickupTypes": [
+    "Maintenance note"
+  ],
+  "encounters": [
+    {
+      "chance": 0,
+      "tier": 1,
+      "enemies": [
+        "Security drone"
+      ],
+      "tactics": []
+    },
+    {
+      "chance": 0,
+      "tier": 1,
+      "enemies": [
+        "Security drone"
+      ],
+      "tactics": []
+    },
+    {
+      "chance": 0,
+      "tier": 1,
+      "enemies": [
+        "Security drone"
+      ],
+      "tactics": []
+    },
+    {
+      "chance": 25,
+      "tier": 1,
+      "enemies": [
+        "Security drone"
+      ],
+      "tactics": []
+    },
+    {
+      "chance": 50,
+      "tier": 1,
+      "enemies": [
+        "Security drone"
+      ],
+      "tactics": []
+    },
+    {
+      "chance": 100,
+      "tier": 1,
+      "enemies": [
+        "Security drone"
+      ],
+      "tactics": []
+    }
+  ],
+  "wings": [
+    {
+      "name": "Service Tower",
+      "character": "Mara",
+      "stack": "Relay Repair",
+      "synopsis": "Mara traces an interrupted signal through the tower.",
+      "gate": {
+        "node": "F2:LANDING",
+        "text": "The relay key is taped beneath the second-floor call button."
+      },
+      "rooms": [
+        {
+          "node": "F1:LANDING",
+          "text": "Rainwater has reached the lift contacts."
+        },
+        {
+          "node": "F1:EXIT",
+          "text": "The battery bank still holds a charge."
+        },
+        {
+          "node": "F2:ENTRY",
+          "text": "The surge blew the fuse on the return circuit."
+        },
+        {
+          "node": "F2:EXIT",
+          "text": "A spare jumper is clipped to the wiring diagram."
+        },
+        {
+          "node": "F3:ENTRY",
+          "text": "A drone has worn a track into the floor beside the roof stairs."
+        },
+        {
+          "node": "F3:LANDING",
+          "text": "The roof hatch seals when the transmitter draws power."
+        }
+      ]
+    }
+  ]
+}
