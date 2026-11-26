@@ -14,9 +14,9 @@ Open **Details** when you want to adjust **Layout**, **Rooms**, **Streaming**, *
 
 ## Open the demo in Unreal Engine 5.8
 
-The demo host is a free download from the [LevelGen documentation repository](https://github.com/Devostater/LevelGen/tree/main/demo). It contains the three demo maps and the basic-shapes theme. Copy the `LevelGen` folder from your Fab download into `demo/LevelGenHost/Plugins`, and `LevelGenPCG` too if you want the PCG sample. The host has a small C++ module, so Unreal builds it the first time you open the project (Visual Studio build tools required).
+Download and extract the demo host from the [LevelGen documentation repository](https://github.com/Devostater/LevelGen/tree/main/demo). It includes all three demo maps, the basic-shapes theme, and the room streaming template. Extract your Fab archives so `LevelGen.uplugin` is at `demo/LevelGenHost/Plugins/LevelGen/LevelGen.uplugin`. If you want to use the PCG integration, also place `LevelGenPCG.uplugin` at `demo/LevelGenHost/Plugins/LevelGenPCG/LevelGenPCG.uplugin` with the rest of its plugin folder. LevelGen PCG is optional for the three maps.
 
-1. Open `demo/LevelGenHost/LevelGenHost.uproject`. The host enables LevelGen, LevelGen PCG, and the Python Editor Script Plugin.
+1. Open `demo/LevelGenHost/LevelGenHost.uproject` in Unreal Engine 5.8 on Win64. Install the Visual Studio C++ build tools first and accept the rebuild prompt if Unreal shows it. The project builds the `LevelGenHostEditor` target in Development. The host enables the Python Editor Script Plugin for the map creation script.
 2. If the Content Browser already has **LevelGenDemo → LevelGenDemo**, open that map. Otherwise, save your current level, open **Window → Developer Tools → Output Log**, and enter this command to create the map and theme.
 
    ```text
@@ -207,9 +207,9 @@ the masks of the two adjoining cells. Transforms are in world space relative
 to the original PCG component. Use the output pins with PCG filters and mesh
 spawners. The graph supplies meshes, materials and any additional components.
 
-The demo graph is `/Game/LevelGenDemo/PCG_LevelGenDemo`. It uses seed 7 with
-Compact Vertical and forwards all four streams to named graph outputs. In a
-fresh source checkout, the `LevelGen.PCG.SampleGraph` editor automation check
-creates and saves the asset if it is missing. Run it from Session Frontend
-under **Automation** after building the demo host, then assign the graph to a
-PCG component to inspect its points.
+The public demo download omits the optional `/Game/LevelGenDemo/PCG_LevelGenDemo`
+graph. After installing LevelGen PCG and building the demo host, run
+`LevelGen.PCG.SampleGraph` from Session Frontend under **Automation** to
+create and save the sample. It uses seed 7 with Compact Vertical and
+forwards all four streams to named graph outputs. Assign it to a PCG
+component to inspect its points.
