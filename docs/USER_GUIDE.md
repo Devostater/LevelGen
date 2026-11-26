@@ -14,14 +14,16 @@ Open **Details** when you want to adjust **Layout**, **Rooms**, **Streaming**, *
 
 ## Open the demo in Unreal Engine 5.8
 
-1. Open `ue5/LevelGenHost/LevelGenHost.uproject`. The host enables LevelGen and the Python Editor Script Plugin.
+The demo host is a free download from the [LevelGen documentation repository](https://github.com/Devostater/LevelGen/tree/main/demo). It contains the three demo maps and the basic-shapes theme. Copy the `LevelGen` folder from your Fab download into `demo/LevelGenHost/Plugins`, and `LevelGenPCG` too if you want the PCG sample. The host has a small C++ module, so Unreal builds it the first time you open the project (Visual Studio build tools required).
+
+1. Open `demo/LevelGenHost/LevelGenHost.uproject`. The host enables LevelGen, LevelGen PCG, and the Python Editor Script Plugin.
 2. If the Content Browser already has **LevelGenDemo → LevelGenDemo**, open that map. Otherwise, save your current level, open **Window → Developer Tools → Output Log**, and enter this command to create the map and theme.
 
    ```text
-   py "C:/AZI/LevelGen/ue5/LevelGenHost/Content/Python/create_levelgen_demo.py"
+   py "C:/LevelGen/demo/LevelGenHost/Content/Python/create_levelgen_demo.py"
    ```
 
-   Change the path if your checkout is elsewhere. The script saves the map and **BasicShapesTheme** under `/Game/LevelGenDemo`.
+   Change the path to where you put the demo. The script saves the map and **BasicShapesTheme** under `/Game/LevelGenDemo`.
 3. Select **LevelGen Demo Generator** in the Outliner. The demo uses seed 42, the Small preset, one-metre cells, and Ultra quality. It uses the engine's plane for floors, cube for walls and crates, and cylinder for drums.
 4. Click **Generate** to refresh the saved demo preview with the current wall height. Change **Quality** and click **Generate** to compare tiers.
 5. Use **Play** with **Spawn Player At → Default Player Start**. The demo uses Unreal's default flying pawn. Use WASD and the mouse to explore from the seed 42 start room. Regenerate with seed 42 before testing the authored spawn if you changed the layout.
